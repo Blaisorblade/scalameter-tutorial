@@ -13,4 +13,8 @@ libraryDependencies += "com.github.axel22" %% "scalameter" % "0.3"
 
 logBuffered := false
 
-testFrameworks += new TestFramework("org.scalameter.ScalaMeterFramework")
+testFrameworks += scalaMeterFramework
+
+// Allow ScalaMeter to run on JDK 6 ─ see
+// http://axel22.github.io/scalameter/2013/02/14/release_0_3.html
+testOptions += Tests.Argument(scalaMeterFramework, "-preJDK7")
