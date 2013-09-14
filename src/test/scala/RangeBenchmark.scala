@@ -3,7 +3,9 @@ import org.scalameter.api._
 object RangeBenchmark
 extends PerformanceTest.Quickbenchmark {
   // multiple tests can be specified here
-  val sizes: Gen[Int] = Gen.range("size")(300000, 1500000, 300000)
+  val mult = 1
+
+  val sizes: Gen[Int] = Gen.range("size")(30000 * mult, 150000 * mult, 30000 * mult)
   val ranges: Gen[Range] =
     for {
       size <- sizes
