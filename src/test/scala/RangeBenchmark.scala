@@ -6,7 +6,10 @@ extends PerformanceTest {
     new Executor.Warmer.Default,
     Aggregator.min,
     new Measurer.Default)
-  lazy val reporter = ChartReporter(ChartFactory.XYLine())
+
+  //lazy val reporter = ChartReporter(ChartFactory.XYLine())
+  lazy val reporter = new LoggingReporter
+
   lazy val persistor = Persistor.None
 
   // multiple tests can be specified here
