@@ -8,8 +8,8 @@ scalacOptions := Seq("-deprecation", "-feature", "-Xlint")
 resolvers += "Sonatype OSS Snapshots" at
   "https://oss.sonatype.org/content/repositories/snapshots"
 
-// ScalaMeter 0.3
-libraryDependencies += "com.github.axel22" %% "scalameter" % "0.3"
+// ScalaMeter
+libraryDependencies += "com.github.axel22" %% "scalameter" % "0.4-M2"
 
 logBuffered := false
 
