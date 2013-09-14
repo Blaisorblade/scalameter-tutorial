@@ -2,7 +2,8 @@ import org.scalameter.api._
 
 object RangeBenchmark
 extends PerformanceTest {
-  lazy val executor = SeparateJvmsExecutor(
+  //lazy val executor = SeparateJvmsExecutor(
+  lazy val executor = LocalExecutor(
     new Executor.Warmer.Default,
     Aggregator.min,
     new Measurer.Default)
