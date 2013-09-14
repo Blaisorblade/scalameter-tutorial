@@ -1,7 +1,14 @@
 import org.scalameter.api._
 
 object RangeBenchmark
-extends PerformanceTest.Quickbenchmark {
+extends PerformanceTest {
+  lazy val executor = LocalExecutor(
+    new Executor.Warmer.Default,
+    Aggregator.min,
+    new Measurer.Default)
+  lazy val reporter = new LoggingReporter
+  lazy val persistor = Persistor.None
+
   // multiple tests can be specified here
   val mult = 1
 
