@@ -23,7 +23,11 @@ extends PerformanceTest {
     } yield 0 until size
 
   performance of "Range" in {
-    measure method "map" in {
+    measure method "map" config (
+      exec.minWarmupRuns -> 1,
+      exec.maxWarmupRuns -> 2,
+      exec.benchRuns -> 15
+    ) in {
       using (ranges) in {
         r => r map (_ + 1)
       }
