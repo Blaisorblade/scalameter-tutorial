@@ -30,7 +30,8 @@ extends PerformanceTest {
 
   performance of "Range" in {
     measure method "map" config (
-      exec.benchRuns -> 100
+      exec.benchRuns -> 100,
+      reports.regression.significance -> 0.05
     ) in {
       using (ranges) in {
         r => r map (_ + 1)
