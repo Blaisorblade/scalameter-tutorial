@@ -1,5 +1,5 @@
 import org.scalameter.api._
-
+/*
 class RegressionTest extends PerformanceTest.Regression {
   def persistor = new SerializationPersistor
 
@@ -40,7 +40,10 @@ class TestSuite extends PerformanceTest.Regression {
   //This overrides the persistor from the included classes.
   //The same would happen for reporter.
   def persistor = Persistor.None
+  lazy val reporter = LoggingReporter()
+
 
   include[MemoryTest]
   include[RegressionTest]
 }
+ */
