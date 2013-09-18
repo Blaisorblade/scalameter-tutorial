@@ -5,7 +5,7 @@ extends PerformanceTest {
   //lazy val executor = SeparateJvmsExecutor(
   lazy val executor = LocalExecutor(
     new Executor.Warmer.Default,
-    Aggregator.average,
+    Aggregator.min,
     new Measurer.Default)
 
   //lazy val reporter = ChartReporter(ChartFactory.XYLine())
@@ -30,7 +30,7 @@ extends PerformanceTest {
 
   performance of "Range" in {
     measure method "map" config (
-      exec.benchRuns -> 100,
+      exec.benchRuns -> 10,
       reports.regression.significance -> 0.05
     ) in {
       using (ranges) in {
