@@ -8,13 +8,12 @@ extends PerformanceTest {
     Aggregator.complete(Aggregator.min),
     new Measurer.Default)
 
-  //lazy val reporter = ChartReporter(ChartFactory.XYLine())
-
   lazy val reporter =
       Reporter.Composite(
         LoggingReporter()
         , DsvReporter(delimiter=';')
         , HtmlReporter(true)
+        /*ChartReporter(ChartFactory.XYLine())*/
       )
 
   lazy val persistor = Persistor.None
