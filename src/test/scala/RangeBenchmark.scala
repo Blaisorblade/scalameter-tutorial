@@ -5,7 +5,7 @@ extends PerformanceTest {
   //lazy val executor = SeparateJvmsExecutor(
   lazy val executor = LocalExecutor(
     new Executor.Warmer.Default,
-    Aggregator.min,
+    Aggregator.complete(Aggregator.min),
     new Measurer.Default)
 
   //lazy val reporter = ChartReporter(ChartFactory.XYLine())
